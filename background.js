@@ -10,8 +10,8 @@
 function show() {
   var notification = window.webkitNotifications.createNotification(
     '16.png',                      // The image.
-    'A word from a simple sentance from somewhere.' // The title.
-    'Hungarian word comes here from the list somewhere!'      // The body.
+    '<a href="http://translate.google.com/#English|Hungarian|this is a test">this is a test</a>', // The title.
+    '<a href="http://translate.google.com/#English|Hungarian|this is a test">this is a test</a>'      // The body.
   );
   notification.show();
 }
@@ -28,7 +28,7 @@ if (window.webkitNotifications) {
   // While activated, show notifications at the display frequency.
   if (JSON.parse(localStorage.isActivated)) { show(); }
 
-  var interval = 1; // The display interval, in minutes.
+  var interval = 5; // The display interval, in minutes.
 
   setInterval(function() {
     interval++;
@@ -39,6 +39,7 @@ if (window.webkitNotifications) {
     ) {
       show();
       interval = 0;
+      notification.cancel(); // set an auto-timeout here for the message to stay on the screen.
     }
   }, 60000);
 }
