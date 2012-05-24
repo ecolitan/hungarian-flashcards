@@ -7,13 +7,14 @@
   permission in the manifest file (or calling
   "webkitNotifications.requestPermission" beforehand).
 */
+
+var notification = window.webkitNotifications.createHTMLNotification(
+    'notification.html'      // The body.
+);
+
 function show() {
-  var notification = window.webkitNotifications.createNotification(
-    '16.png',                      // The image.
-    '<a href="http://translate.google.com/#English|Hungarian|this is a test">this is a test</a>', // The title.
-    '<a href="http://translate.google.com/#English|Hungarian|this is a test">this is a test</a>'      // The body.
-  );
-  notification.show();
+  notification.show();  
+  setTimeout(notification.cancel, 10000); // set an auto-timeout here for the message to stay on the screen.
 }
 
 // Conditionally initialize the options.
@@ -39,7 +40,7 @@ if (window.webkitNotifications) {
     ) {
       show();
       interval = 0;
-      notification.cancel(); // set an auto-timeout here for the message to stay on the screen.
     }
   }, 60000);
 }
+

@@ -7,5 +7,6 @@
   "permissions": ["tabs", "notifications"],
   "options_page": "options.html",
   "background": { "scripts": ["background.js"] },
-  "manifest_version": 2
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self'; object-src 'self'"
 }
