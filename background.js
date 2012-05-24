@@ -14,7 +14,7 @@ var notification = window.webkitNotifications.createHTMLNotification(
 
 function show() {
   notification.show();  
-  setTimeout(notification.cancel, 10000); // set an auto-timeout here for the message to stay on the screen.
+  setTimeout(function(){ notification.cancel(); },10000); // set an auto-timeout here for the message to stay on the screen.
 }
 
 // Conditionally initialize the options.
