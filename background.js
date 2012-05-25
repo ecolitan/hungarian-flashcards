@@ -29,7 +29,7 @@ if (window.webkitNotifications) {
   // While activated, show notifications at the display frequency.
   if (JSON.parse(localStorage.isActivated)) { show(); }
 
-  var interval = 5; // The display interval, in minutes.
+  var interval = 1; // The display interval, in minutes.
 
   setInterval(function() {
     interval++;

@@ -1,0 +1,21 @@
+array = 
+[
+    {
+        sentence1: 'Üdvözlet',
+        sentence2: 'Üdvözlet'
+    },
+    {
+        sentence1: 'Jó napot kívánok',
+        sentence2: 'Jó napot kívánok'
+    },
+    {
+        sentence1: 'Hogy vagy?',
+        sentence2: 'Hogy vagy?'
+    },
+    {
+        sentence1: 'Köszönöm, jól. És Ön?',
+        sentence2: 'Köszönöm, jól. És Ön?'
+    },
+];
+
+array[0].sentence1 = safsadf;
